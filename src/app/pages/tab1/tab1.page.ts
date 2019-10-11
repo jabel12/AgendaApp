@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { DeseosService } from 'src/app/services/deseos.service';
 import { Router } from '@angular/router';
 import { AlertController, NavController } from '@ionic/angular';
+import { TabsService } from '../../core/tabs.service';
 
 @Component({
   selector: 'app-tab1',
@@ -9,7 +10,8 @@ import { AlertController, NavController } from '@ionic/angular';
   styleUrls: ['tab1.page.scss']
 })
 export class Tab1Page {
-  constructor(public deseosService: DeseosService, private router:Router, private  alertCtrl: AlertController, private navCtrl: NavController) {
+  constructor(public deseosService: DeseosService, private router:Router, private  alertCtrl: AlertController, private navCtrl: NavController, private tabsService: TabsService) {
+    this.tabsService.showTabs();
   }
 
   async agregarLista(){

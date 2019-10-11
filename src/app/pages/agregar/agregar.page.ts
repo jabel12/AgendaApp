@@ -4,6 +4,7 @@ import { DeseosService } from 'src/app/services/deseos.service';
 import { ActivatedRoute } from '@angular/router';
 import { ListaItem } from 'src/app/models/lista-item.models';
 import { ToastController } from '@ionic/angular';
+import { TabsService } from '../../core/tabs.service';
 
 @Component({
   selector: 'app-agregar',
@@ -14,7 +15,8 @@ export class AgregarPage implements OnInit {
   lista: Lista;
   nombreItem = '';
 
-  constructor(private deseosService: DeseosService, private route: ActivatedRoute, private toastController: ToastController) {
+  constructor(private deseosService: DeseosService, private route: ActivatedRoute, private toastController: ToastController, private tabsService: TabsService) {
+    this.tabsService.hideTabs();
     const listaId = this.route.snapshot.paramMap.get('listaId');
     this.lista = this.deseosService.getLista(listaId);
     console.log(this.lista);
