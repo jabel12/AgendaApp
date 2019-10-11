@@ -1,0 +1,26 @@
+<ion-header>
+    <ion-toolbar color="dark">
+        <ion-title>
+            Tareas pendientes
+        </ion-title>
+
+        <ion-buttons slot="end" (click)="irConfig()">
+            <ion-button>
+                <ion-icon color="light" name="menu"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+
+    </ion-toolbar>
+</ion-header>
+
+<ion-content color="dark">
+
+    <app-listas [terminada]="false"></app-listas>
+
+    <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+        <ion-fab-button color="light" (click)="agregarLista()">
+            <ion-icon size="large" color="tertiary" name="add"></ion-icon>
+        </ion-fab-button>
+    </ion-fab>
+
+</ion-content>

@@ -1,0 +1,22 @@
+<ion-header>
+    <ion-toolbar color="dark">
+        <ion-buttons slot="start">
+            <ion-back-button color="tertiary" (click)="backBeg()"></ion-back-button>
+        </ion-buttons>
+        <ion-title>Notificaciones</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content color="dark">
+    <ion-list>
+        <ion-label></ion-label>
+        <ion-item color="dark">
+            <ion-label>Selecciona una tarea</ion-label>
+            <ion-select>
+                <ion-select-option *ngFor="let list of deseosService.listas">{{list.titulo}}</ion-select-option>
+            </ion-select>
+        </ion-item>
+    </ion-list>
+    <ion-label></ion-label>
+    <ion-label>Selecciona la fecha</ion-label>
+</ion-content>
