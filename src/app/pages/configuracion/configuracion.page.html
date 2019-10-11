@@ -12,11 +12,26 @@
         <ion-label></ion-label>
         <ion-item color="dark">
             <ion-label>Selecciona una tarea</ion-label>
-            <ion-select>
+            <ion-select interface="popover">
                 <ion-select-option *ngFor="let list of deseosService.listas">{{list.titulo}}</ion-select-option>
             </ion-select>
         </ion-item>
+
+        <ion-item color="dark">
+            <ion-label>Selecciona la fecha</ion-label>
+            <ion-datetime color="tertiary" value="2019-01-01" placeholder="Select Date"></ion-datetime>
+        </ion-item>
+
+        <ion-item>
+            <ion-label>Notificación cada</ion-label>
+            <ion-select value="notifications" interface="action-sheet">
+                <ion-select-option value="1">1 hora</ion-select-option>
+                <ion-select-option value="2">2 horas</ion-select-option>
+                <ion-select-option value="3">3 horas</ion-select-option>
+                <ion-select-option value="4">4 horas</ion-select-option>
+            </ion-select>
+        </ion-item>
+
     </ion-list>
-    <ion-label></ion-label>
-    <ion-label>Selecciona la fecha</ion-label>
+
 </ion-content>

@@ -96,13 +96,6 @@ export class ListasComponent implements OnInit {
     alert.present();
   }
 
-  toggleReorder() {
-    const reorderGroup = document.getElementById('reorder');
-    reorderGroup.disabled = !reorderGroup.disabled;
-    reorderGroup.addEventListener('ionItemReorder', ({detail}) => {
-      detail.complete(true);
-    });
-  }
   ngOnInit() {}
 
 }
